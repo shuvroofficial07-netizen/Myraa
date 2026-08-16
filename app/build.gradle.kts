@@ -56,6 +56,11 @@ android {
     compose = true
     buildConfig = true
   }
+  
+  defaultConfig {
+      val geminiKey = project.findProperty("GEMINI_API_KEY") as? String ?: ""
+      buildConfigField("String", "GEMINI_API_KEY", "\"$geminiKey\"")
+  }
   testOptions { unitTests { isIncludeAndroidResources = true } }
   dependenciesInfo {
     includeInApk = false
@@ -98,8 +103,8 @@ dependencies {
   implementation(libs.androidx.navigation.compose)
   implementation(libs.androidx.room.ktx)
   implementation(libs.androidx.room.runtime)
-  // implementation(libs.coil.compose)
   implementation(libs.converter.moshi)
+  implementation(libs.moshi.kotlin)
   implementation(libs.firebase.ai)
   // Uncomment to use Firestore:
   // implementation(libs.firebase.firestore)
