@@ -1,0 +1,6 @@
+{
+  "name": "MYRAA",
+  "description": "Maximum Persistent 24/7 Assistant System",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
